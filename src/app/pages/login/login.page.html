@@ -1,0 +1,45 @@
+<div class="w-full h-screen">
+  <div class="flex justify-end w-full">
+    <img src="assets/img/round2.png" class="h-[14vh]">
+  </div>
+  <div class="w-full flex justify-between pt-[25vh] ">
+    <img src="assets/img/round1.png" class="w-[21vh]">
+  </div>
+</div>
+
+<div class="absolute w-full">
+  <div class="pt-[13vh] px-7">
+    <p class="text-[#646464]">식사기록부와 함께</p>
+    <p class="font-[800] text-[24px] leading-7">간편한 칼로리 계산 앱으로<br>
+      하루 섭취량을 쉽게 파악하세요. </p>
+  </div>
+</div>
+
+<div class="absolute flex items-end w-full h-screen py-4 text-sm px-7">
+  <div class="w-full">
+    <div class="font-[600]">
+      <div class="flex justify-end w-full">
+        <img src="assets/img/emo1.png" class="h-[100px]" />
+      </div>
+      <div (click)="loginService.loginWithKakao()"
+        class="flex w-full justify-center bg-[#F7E600] py-3 rounded-[10px] shadow-[1px_2px_2px_0px_rgba(0,0,0,0.25)]">
+        <img src="assets/icon/kakaologo.svg" />
+        <p class="pl-2">카카오로 시작하기</p>
+      </div>
+      <div (click)="loginService.loginWithNaver()"
+        class="flex w-full justify-center bg-[#2DB400] py-3 rounded-[10px] mt-3 shadow-[1px_2px_2px_0px_rgba(0,0,0,0.25)]">
+        <img src="assets/icon/naverlogo.svg" />
+        <p class="pl-2 text-white">네이버로 시작하기</p>
+      </div>
+      <div (click)="loginService.onGoogleLoginClick()"
+        class="flex w-full justify-center bg-white py-3 rounded-[10px] mt-3 shadow-[1px_2px_2px_0px_rgba(0,0,0,0.25)] border">
+        <img src="assets/icon/googlelogo.svg" />
+        <p class="pl-2 ">Google로 시작하기</p>
+      </div>
+    </div>
+    <div class="pt-4 text-xs text-[#D2D2D2] flex w-full justify-center">
+      <img src="assets/img/roundchecked.svg" class="pr-2" />
+      <p>이용약관과 개인정보 처리방침에 동의합니다</p>
+    </div>
+  </div>
+</div>

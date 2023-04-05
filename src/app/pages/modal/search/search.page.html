@@ -1,0 +1,22 @@
+<ion-content>
+  <app-back-button-bar>검색</app-back-button-bar>
+  <div class="flex w-full pt-4">
+    <div class="w-1/2 {{ tabState ? '' : 'border-[#35248F]' }} text-center border-b-[2.5px]" (click)="tabToggle(false)">
+      <p class="font-[600] leading-9 text-xs {{ tabState ? '' : 'text-[#35248F]' }}">칼로리 검색하기</p>
+    </div>
+    <div class="w-1/2 {{ !tabState ? '' : 'border-[#35248F]' }} text-center border-b-[2.5px]" (click)="tabToggle(true)">
+      <p class="font-[600] leading-9 text-xs {{ !tabState ? '' : 'text-[#35248F]' }}">나만의 음식 기록</p>
+    </div>
+  </div>
+  <ng-container *ngIf=!tabState>
+    <app-tab-search></app-tab-search>
+  </ng-container>
+  <ng-container *ngIf=tabState>
+    <app-tab-recipe></app-tab-recipe>
+  </ng-container>
+</ion-content>
+<ng-container *ngIf=tabState>
+  <div class="w-full p-4 flex justify-end">
+    <ion-fab-button [routerLink]="['/recipe-add']"><img src="assets/icon/plus-white.svg" class="w-6" /></ion-fab-button>
+  </div>
+</ng-container>

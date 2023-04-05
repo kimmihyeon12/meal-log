@@ -1,0 +1,20 @@
+<div class="relative px-4">
+  <input type="text" #foodSerchInput
+    class="mt-2 border border-gray-200 text-gray-500 placeholder-gray-400 text-xs font-[400] py-2.5 w-full px-4 rounded-md"
+    placeholder="음식명을 입력해주세요" [(ngModel)]="name">
+  <div class="absolute top-[17px] right-6">
+    <img (click)="this.onInputReset(foodSerchInput)" class="w-5 h-5" src="assets/icon/roundcancel.svg" />
+  </div>
+</div>
+<div class="pt-4">
+  <ng-container *ngIf="foods$">
+    <ng-container *ngFor="let food of foods$ | async">
+      <div class="flex py-3 border-b px-6 border-[#F1F1F1]" [routerLink]="['/search-detail', food.id]">
+        <img src="assets/icon/search.svg" />
+        <p [ngClass]="{'text-blue-500': food.name.includes(name)}" class="pl-2 text-xs font-[500] text-[#646464]">
+          {{food.name}}
+        </p>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>

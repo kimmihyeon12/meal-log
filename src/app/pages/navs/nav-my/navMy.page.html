@@ -1,0 +1,54 @@
+<ion-content>
+  <div class="w-full h-screen overflow-y-scroll">
+    <div class="fixed z-20 flex justify-end w-full p-3 bg-white">
+      <img [routerLink]="['/board-add']" src="assets/icon/plus-round.svg" class="pr-2.5" />
+      <img src="assets/icon/hambar.svg" />
+    </div>
+    <div class="flex items-center justify-center w-full pt-14">
+      <div class="relative pr-8">
+        <div class="overflow-hidden border rounded-full w-28 h-28">
+          <img src="assets/img/emo5.png" class="w-28">
+        </div>
+        <div [routerLink]="['/profile-update']"
+          class="absolute w-8 h-8 z-10 top-20 left-[85px] border rounded-full overflow-hidden">
+          <img src="assets/img/update.png" class="w-8" />
+        </div>
+      </div>
+      <div class="flex-col">
+        <div class="flex justify-between w-44 text-center text-xs text-[#B5B5B5] font-[500]">
+          <div class="flex-col">
+            <p class="">게시물</p>
+            <p class="text-lg font-[700] text-black">23</p>
+          </div>
+          <div class="flex-col">
+            <p class="">몸무게</p>
+            <p class="text-lg font-[700] text-black">65kg</p>
+          </div>
+          <div class="flex-col">
+            <p class="">목표몸무게</p>
+            <p class="text-lg font-[700] text-black">44kg</p>
+          </div>
+        </div>
+        <p
+          class="inline-block mt-1 border border-[#540BB0] text-[#540BB0]  text-center py-0.5 px-4 rounded-md font-[500]">
+          호리둥절님</p>
+      </div>
+    </div>
+    <div class="flex w-full pt-8">
+      <div class="w-1/2 {{ tabState ? '' : 'border-[#35248F]' }} text-center border-b-[2.5px]"
+        (click)="tabToggle(false)">
+        <p class="font-[600] leading-9 {{ tabState ? '' : 'text-[#35248F]' }}">식사기록장</p>
+      </div>
+      <div class="w-1/2 {{ !tabState ? '' : 'border-[#35248F]' }} text-center border-b-[2.5px]"
+        (click)="tabToggle(true)">
+        <p class="font-[600] leading-9 {{ !tabState ? '' : 'text-[#35248F]' }}">변화기록장</p>
+      </div>
+    </div>
+    <ng-container *ngIf=!tabState>
+      <app-board-food></app-board-food>
+    </ng-container>
+    <ng-container *ngIf=tabState>
+      <app-board-body></app-board-body>
+    </ng-container>
+  </div>
+</ion-content>

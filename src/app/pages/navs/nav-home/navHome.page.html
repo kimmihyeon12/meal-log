@@ -1,0 +1,80 @@
+<!-- <ion-content>
+  <div class="absolute w-full h-screen">
+    <div class="flex justify-end w-full">
+      <div class="p-4">
+        <div class="w-12 py-1 flex justify-center text-xs text-white bg-[#32247B] rounded-full "
+          [routerLink]="['/search']">
+          <p>검색</p>
+        </div>
+      </div>
+    </div>
+    <div class="font-[700] text-2xl text-center leading-7 pt-[1.5vh]"> {{date}}
+      섭취칼로리는<br>
+      <span class="text-3xl text-[#32247B]">1342kcal</span>입니다.
+    </div>
+    <div class="w-full h-[76vh] flex-col flex justify-center">
+      <div class="flex justify-center w-full">
+        <img src="assets/img/emo4.png" class="w-24" />
+      </div>
+      <div class="bg-white border">
+        <ion-slides [options]="slidesOptions">
+          <ion-slide *ngFor="let slide of sliders ">
+            <div
+              class="relative bg-white w-[58vw] h-80 my-[18px] mb-10 rounded-lg shadow-[0px_1px_2px_1px_rgba(0,0,0,0.2)]">
+              <div class="absolute w-full h-[300px] flex justify-center items-center">
+                <p>{{slide}}</p>
+              </div>
+              <div class="absolute flex items-end w-full h-full p-2">
+                <div
+                  class="w-full h-8 bg-gradient-to-r from-[#1F164B] via-[#35248F] to-[#540BB0] flex items-center justify-center rounded-[5px]">
+                  <p class="text-[13px]  text-white">기록하기</p>
+                </div>
+              </div>
+            </div>
+          </ion-slide>
+        </ion-slides>
+      </div>
+    </div>
+  </div>
+</ion-content> -->
+<div class="relative">
+  <div class="w-full h-screen">
+    <div class="flex justify-end w-full">
+      <div class="p-4 z-10">
+        <div class="w-12 py-1 flex justify-center text-xs text-white bg-[#32247B] rounded-full"
+          [routerLink]="['/search']">
+          <p>검색</p>
+        </div>
+      </div>
+    </div>
+    <div class="font-[700] text-2xl text-center leading-7 pt-[1.5vh]"> {{date}}
+      섭취칼로리는<br>
+      <span class="text-3xl text-[#32247B]">1342kcal</span>입니다.
+    </div>
+    <div class="w-full h-[76vh] flex-col flex justify-center z-20">
+      <div class="flex justify-center w-full">
+        <img src="assets/img/emo4.png" class="w-24" />
+      </div>
+
+      <div class="flex">
+        <ion-slides [options]="slidesOptions">
+          <ion-slide *ngFor="let slide of sliders ">
+            <div
+              class="relative bg-white z-10 w-[58vw] h-80 my-[18px] mb-10 rounded-lg shadow-[0px_1px_2px_1px_rgba(0,0,0,0.2)]">
+              <div class="absolute w-full h-[300px] flex justify-center items-center">
+                <p>{{slide}}</p>
+              </div>
+              <div class="absolute flex items-end w-full h-full p-2">
+                <div
+                  class="w-full h-8 bg-gradient-to-r from-[#1F164B] via-[#35248F] to-[#540BB0] flex items-center justify-center rounded-[5px]">
+                  <p class="text-[13px]  text-white text-xs font-[500]">기록하기</p>
+                </div>
+              </div>
+            </div>
+          </ion-slide>
+        </ion-slides>
+      </div>
+    </div>
+  </div>
+  <div id="particles-js" class="absolute top-0 left-0 w-full h-screen z-0"></div>
+</div>
